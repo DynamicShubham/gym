@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fitness Gym - Transform Your Life</title>
+    <title>Life Fitness - Transform Your Life</title>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Teko:wght@300;400;500;600;700&family=Barlow:wght@300;400;600;700;900&display=swap" rel="stylesheet">
     <style>
         * {
@@ -612,34 +612,287 @@
             }
         }
 
+        /* Mobile Menu */
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--golden-yellow);
+            font-size: 2rem;
+            cursor: pointer;
+            z-index: 1001;
+        }
+
+        .nav-links.mobile-active {
+            display: flex;
+        }
+
         /* Responsive */
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 4rem;
-            }
-
-            .hero-subtitle {
-                font-size: 1.5rem;
-            }
-
-            .section-title {
-                font-size: 3rem;
+        @media (max-width: 1024px) {
+            .nav-container {
+                padding: 0 1.5rem;
             }
 
             .nav-links {
-                gap: 1rem;
+                gap: 1.5rem;
             }
 
             .nav-links a {
-                font-size: 0.9rem;
+                font-size: 1rem;
+            }
+
+            .hero h1 {
+                font-size: 6rem;
+            }
+
+            .classes-grid,
+            .pricing-grid {
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            }
+        }
+
+        @media (max-width: 768px) {
+            body {
+                overflow-x: hidden;
+            }
+
+            /* Navigation */
+            .nav-container {
+                padding: 0 1rem;
+            }
+
+            .mobile-menu-toggle {
+                display: block;
+            }
+
+            .nav-links {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 70%;
+                height: 100vh;
+                background: rgba(10, 10, 10, 0.98);
+                backdrop-filter: blur(20px);
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: 2rem;
+                transition: right 0.3s ease-in-out;
+                border-left: 2px solid var(--golden-yellow);
+                z-index: 999;
+            }
+
+            .nav-links.mobile-active {
+                right: 0;
+            }
+
+            .nav-links a {
+                font-size: 1.5rem;
             }
 
             .brand-name {
-                font-size: 1.8rem;
+                font-size: 1.5rem;
+                letter-spacing: 2px;
+            }
+
+            .logo {
+                width: 50px;
+                height: 50px;
+            }
+
+            .logo img,
+            .logo svg {
+                width: 35px;
+                height: 35px;
+            }
+
+            /* Hero */
+            .hero {
+                padding: 0 1rem;
+            }
+
+            .hero h1 {
+                font-size: 3.5rem;
+                letter-spacing: 5px;
+            }
+
+            .hero-subtitle {
+                font-size: 1.2rem;
+                letter-spacing: 3px;
+                margin-bottom: 2rem;
+            }
+
+            .cta-button {
+                padding: 1.2rem 2.5rem;
+                font-size: 1.1rem;
+                letter-spacing: 1px;
+            }
+
+            .floating-element {
+                display: none;
+            }
+
+            /* Stats */
+            .stats-section {
+                padding: 4rem 1rem;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 2rem;
+            }
+
+            .stat-number {
+                font-size: 3.5rem;
+            }
+
+            .stat-label {
+                font-size: 0.9rem;
+            }
+
+            /* Sections */
+            .classes-section,
+            .membership-section,
+            .contact-section {
+                padding: 4rem 1rem;
+            }
+
+            .section-title {
+                font-size: 2.5rem;
+                letter-spacing: 4px;
+                margin-bottom: 2rem;
+            }
+
+            /* Classes */
+            .classes-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .class-card {
+                padding: 2rem;
+            }
+
+            .class-icon {
+                font-size: 3rem;
+            }
+
+            .class-card h3 {
+                font-size: 2rem;
+            }
+
+            .class-card p {
+                font-size: 1rem;
+            }
+
+            /* Pricing */
+            .pricing-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
             }
 
             .pricing-card.featured {
                 transform: scale(1);
+            }
+
+            .pricing-card {
+                padding: 2rem 1.5rem;
+            }
+
+            .pricing-card h3 {
+                font-size: 2rem;
+            }
+
+            .price {
+                font-size: 3rem;
+            }
+
+            .pricing-button {
+                padding: 0.8rem 2rem;
+                font-size: 1.1rem;
+            }
+
+            /* Contact */
+            .contact-container {
+                padding: 0 1rem;
+            }
+
+            .form-group label {
+                font-size: 1rem;
+            }
+
+            /* Footer */
+            footer {
+                padding: 3rem 1rem 2rem;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .footer-section h4 {
+                font-size: 1.5rem;
+            }
+
+            /* Modal */
+            .modal-content {
+                width: 95%;
+                padding: 2rem 1.5rem;
+                margin: 1rem;
+            }
+
+            .modal h2 {
+                font-size: 2.2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 2.8rem;
+                letter-spacing: 3px;
+            }
+
+            .hero-subtitle {
+                font-size: 1rem;
+                letter-spacing: 2px;
+            }
+
+            .cta-button {
+                padding: 1rem 2rem;
+                font-size: 1rem;
+                width: 100%;
+            }
+
+            .section-title {
+                font-size: 2rem;
+                letter-spacing: 3px;
+            }
+
+            .brand-name {
+                font-size: 1.2rem;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stat-number {
+                font-size: 3rem;
+            }
+
+            .class-card,
+            .pricing-card {
+                padding: 1.5rem;
+            }
+
+            .modal-content {
+                padding: 1.5rem 1rem;
+            }
+
+            .pricing-card.featured::after {
+                font-size: 0.7rem;
+                padding: 0.3rem 1rem;
             }
         }
     </style>
@@ -665,13 +918,16 @@
                         </g>
                     </svg>
                 </div>
-                <div class="brand-name">FITNESS GYM</div>
+                <div class="brand-name">LIFE FITNESS</div>
             </div>
-            <ul class="nav-links">
-                <li><a href="#home">HOME</a></li>
-                <li><a href="#classes">CLASSES</a></li>
-                <li><a href="#membership">MEMBERSHIP</a></li>
-                <li><a href="#contact">CONTACT</a></li>
+            <button class="mobile-menu-toggle" onclick="toggleMobileMenu()" aria-label="Toggle menu">
+                <span id="menuIcon">☰</span>
+            </button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home" onclick="closeMobileMenu()">HOME</a></li>
+                <li><a href="#classes" onclick="closeMobileMenu()">CLASSES</a></li>
+                <li><a href="#membership" onclick="closeMobileMenu()">MEMBERSHIP</a></li>
+                <li><a href="#contact" onclick="closeMobileMenu()">CONTACT</a></li>
             </ul>
         </div>
     </nav>
@@ -843,7 +1099,7 @@
     <footer>
         <div class="footer-content">
             <div class="footer-section">
-                <h4>FITNESS GYM</h4>
+                <h4>LIFE FITNESS</h4>
                 <p>Transform your life through fitness. Join the movement and unleash your true potential.</p>
             </div>
             <div class="footer-section">
@@ -857,7 +1113,7 @@
                 <h4>CONTACT INFO</h4>
                 <p>📍 123 Fitness Street, Mumbai, Maharashtra</p>
                 <p>📞 +91 98765 43210</p>
-                <p>✉️ info@fitnessgym.com</p>
+                <p>✉️ <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="1c75727a735c70757a797a756872796f6f327f7371">[email&#160;protected]</a></p>
             </div>
             <div class="footer-section">
                 <h4>HOURS</h4>
@@ -874,7 +1130,7 @@
     <div class="modal" id="membershipModal">
         <div class="modal-content">
             <button class="modal-close" onclick="closeModal()">&times;</button>
-            <h2>JOIN FITNESS GYM</h2>
+            <h2>JOIN LIFE FITNESS</h2>
             <div class="success-message" id="successMessage">
                 Thank you! We'll contact you within 24 hours.
             </div>
@@ -897,10 +1153,37 @@
         </div>
     </div>
 
-    <script>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+        // Mobile menu toggle
+        function toggleMobileMenu() {
+            const navLinks = document.getElementById('navLinks');
+            const menuIcon = document.getElementById('menuIcon');
+            navLinks.classList.toggle('mobile-active');
+            menuIcon.textContent = navLinks.classList.contains('mobile-active') ? '✕' : '☰';
+        }
+
+        function closeMobileMenu() {
+            const navLinks = document.getElementById('navLinks');
+            const menuIcon = document.getElementById('menuIcon');
+            navLinks.classList.remove('mobile-active');
+            menuIcon.textContent = '☰';
+        }
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function(e) {
+            const navLinks = document.getElementById('navLinks');
+            const menuToggle = document.querySelector('.mobile-menu-toggle');
+            const navContainer = document.querySelector('.nav-container');
+            
+            if (!navContainer.contains(e.target) && navLinks.classList.contains('mobile-active')) {
+                closeMobileMenu();
+            }
+        });
+
         // Smooth scrolling
         function scrollToSection(sectionId) {
             document.getElementById(sectionId).scrollIntoView({ behavior: 'smooth' });
+            closeMobileMenu();
         }
 
         // Modal functions
@@ -1050,8 +1333,3 @@
         });
 
         // Console log for viewing stored data (for demo purposes)
-        console.log('To view contacts:', 'JSON.parse(localStorage.getItem("lifefitnessContacts"))');
-        console.log('To view memberships:', 'JSON.parse(localStorage.getItem("lifefitnessMemberships"))');
-    </script>
-</body>
-</html>
